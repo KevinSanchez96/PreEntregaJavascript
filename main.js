@@ -1,42 +1,29 @@
-// CLASE 2
-// let numeroUno = parseInt(prompt("Ingresar un numero :"));
-// let numeroDos = parseInt(prompt("Ingrese otro numero :"));
-// let operacion = prompt("Ingrese una operacion :");
-// let resultado;
+let cantidadAComprar = 0;
+let descuento = 200;
+let totalAComprar = 0;
 
-// if (operacion === "multiplicacion") {
-//     resultado = numeroUno * numeroDos;
-//     alert(resultado);
-// } else if (operacion === "suma")
-// {
-//     resultado = numeroUno + numeroDos;
-//     alert(resultado);  
-// }else if (operacion === "resta")
-// {
-//     resultado = numeroUno - numeroDos;
-//     alert(resultado);
-// }else if(operacion === "division")
-// {
-//     if(numeroDos!= 0){
-//     resultado = numeroUno / numeroDos
-//     alert(resultado);
-//     }else{
-//         alert("No se puede dividir por 0");
-//     }
-// }
-//----------------------------------------------------------------------------------------------//
-let numeroInicial = parseInt(prompt("Ingresar un numero :"));
-let resultadoFinal = 0;
-for(let i=0;i<=5;i++)
-{
-    let numeroSuma = parseInt(prompt("Ingresar un numero para sumar :"));
-    if(i===0)
-    {
-        resultadoFinal = numeroInicial+numeroSuma;
-        alert(resultadoFinal);
-    }
-    else{
-        resultadoFinal += numeroSuma;
-        alert(resultadoFinal);
+function totalDescuento(a){
+    if(a>1000){
+        a -= descuento;
+        alert("Felicidades usted ha ganado un descuento !");
+        alert(`Su nuevo total es de $${a}`);
+    }else{
+        alert("Para conseguir un descuento debe superar los $1000");
+        alert(`Su total es de $${a}`);
     }
 }
+
+cantidadAComprar = parseInt(prompt('Cuantos productos desea comprar ?'));
+
+if(cantidadAComprar!=0)
+{
+    for(let i=0 ; i<cantidadAComprar; i++)
+    {
+        totalAComprar +=parseInt(prompt("Ingrese el valor del producto :"));
+    }
+}else{
+    alert("No desea comprar en este momento");
+}
+totalDescuento(totalAComprar);
+
+
